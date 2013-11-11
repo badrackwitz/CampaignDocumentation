@@ -17,6 +17,7 @@ function getCampaignHistory(id){
             beforeSend: function(){
             	console.log('getting the campaigns');
             	$('#loadingCampaignHistory').show();
+            	$('#historyListing section').css({'opacity':'0.5','filter':'alpha(opacity=50)'});
             },
             success: function(data){
 				//console.log(data);
@@ -114,7 +115,7 @@ function createEntryTypeTemplate(entryType){
 			var returnString = 	'<div>'
 				+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="AdOps-Teammitglied" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
 				+ 					'<label for="dateValidatedOn">Validiert am:</label><br/><br/><br/>'
-            	+ 					'<input type="date" id="dateValidatedOn" name="startValidated" value="<?php echo date(\'d-m-Y\'); ?>"/><br/><br/>'
+            	+ 					'<input type="date" id="dateValidatedOn" name="startValidated" value="<?php echo date(); ?>"/><br/><br/>'
             	+					'<label for="datePlannedStart">Kampagnenstart am:</label><br/><br/><br/>'
             	+ 					'<input type="date" id="datePlannedStart" name="startDate" /><br/><br/>'
             	+ 				'</div>'
