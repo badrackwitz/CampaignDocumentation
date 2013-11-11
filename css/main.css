@@ -93,7 +93,7 @@ body{
 #historyListing{
 	margin-top:10px;
 	width:295px;
-	overflow-y: scroll;
+	overflow-y: auto;
 	height: 80%;
 }
 #historyListing section{
@@ -193,6 +193,10 @@ label{
 }
 #entryTypeTemplate div span{
 	margin-top: 20px;
+	width:220px;
+}
+span#noMarginTop{
+	margin-top: 10px !important;
 }
 #file-upload{
 	margin-top:0px;
@@ -204,5 +208,6 @@ label{
 	font-size: 17pt;
 	text-align: center;
 	vertical-align: middle;
-	padding:5px;
+	padding-right:7px;
+	padding-top:5px;
 }

@@ -22,7 +22,7 @@ function getCampaignHistory(id){
             success: function(data){
 				//console.log(data);
 				if(data == ''){
-					data = '<section style="background-color:transparent;padding-left:0px;border:0px;">Bisher keine Eintr&auml;ge<br/> in dieser Kampagne.</section>';
+					data = '<section style="background-color:transparent;padding-left:0px;border:0px;box-shadow:0px 0px 0px;">Bisher keine Eintr&auml;ge<br/> in dieser Kampagne.</section>';
 				}
 				$('#historyListing').html(data);
 				$('#loadingCampaignHistory').hide();
@@ -86,7 +86,7 @@ function createEntryTypeTemplate(entryType){
 
 		case 'adMaterial':
 			var returnString = 	'<div>'
-				+ 					'<span>Von: <input name="From" type="text" size="15" maxlength="15"/></span><br/><br/>'
+				+ 					'<span>Von: <span id="noMarginTop"><input name="From" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
 				+ 					'<label for="file-upload">Werbemittel:</label><br/><br/><br/>'
             	+ 					'<input type="file" id="file-upload" name="file-upload" /><br/><br/>'
             	+ 				'</div>'
@@ -143,7 +143,7 @@ function createEntryTypeTemplate(entryType){
 		case 'reporting':
 			var returnString = 	'<div>'
 				+ 					'<span>Von: <span id="listTeammember"><input name="From" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
-				+ 					'<span>An: <input name="To" type="text" size="15" maxlength="15"/></span><br/><br/>'
+				+ 					'<span>An: <span id="noMarginTop"><input name="To" type="text" size="15" maxlength="15"/></span></span><br/>'
 				+ 					'<label for="file-upload-reporting">Reporting:</label><br/><br/><br/>'
             	+ 					'<input type="file" id="file-upload" name="file-upload-reporting" /><br/><br/>'
             	+ 				'</div>'
@@ -160,10 +160,10 @@ function createEntryTypeTemplate(entryType){
 
 function fillTeammemberDD() {
 	var ddContent = '<select id="teamMember">'
-					+ '<option value="leonidKushner">Leonid Kushner</option>'
-					+ '<option value="oleMehles">Ole Mehles</option>'
-					+ '<option value="juliaNiendorf">Julia Niendorf</option>'
-					+ '<option value="desireeSattler">D&eacute;sir&eacute;e Sattler</option>'
+					+ 	'<option value="leonidKushner">Leonid Kushner</option>'
+					+ 	'<option value="oleMehles">Ole Mehles</option>'
+					+ 	'<option value="juliaNiendorf">Julia Niendorf</option>'
+					+ 	'<option value="desireeSattler">D&eacute;sir&eacute;e Sattler</option>'
 					+'</select>';
 	$('#listTeammember').html(ddContent);
 	//console.log('replacement of input field successful');
