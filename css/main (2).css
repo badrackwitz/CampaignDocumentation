@@ -1,0 +1,137 @@
+/** reset CSS **/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/** ------------------------------ **/
+/**  main CSS **/
+*{
+	
+	margin:0;
+	padding:0;
+}
+body{
+	background-color: #EFEFEF;
+	font-family: 'Lucida Sans Unicode', 'Trebuchet MS', Arial, sans-serif;
+	font-size: 13pt;
+
+}
+#leftColoumn{
+	width:20%;
+	height:100%;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#campaignNames, #advertiser{
+	margin-left:15px;
+	margin-top:30px;
+}
+#campaignNames select, #advertiser select{
+	
+	margin-top:10px;
+}
+#campaignNameList select{
+	width:200px;
+}
+#rightColumn{
+	width:75%;
+	height:100%;
+	position: absolute;
+	left:20%;
+	top:0px;
+	border-left: thin solid #bbb;
+}
+#contentwrapper{
+	margin-left:15px;
+	margin-top:30px;
+}
+#historyListing{
+	margin-top:10px;
+}
+#historyListing section{
+	margin-top:20px;
+	width:250px;
+	height:200px;
+	background-color: #FEFEFE;
+	border: thin solid #bbb;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	text-align: left;
+	padding-left:10px;
+	padding-top:10px;
+	font-size: 11pt;
+	position: relative;
+}
+#entryType{
+	position:absolute;
+	top:0px;
+	left:231px;
+	width:30px;
+	height:30px;
+	background-color: #FFAA00;
+	opacity: 0.3;
+	filter:alpha(opacity=30); /* For IE8 and earlier */
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+#newEntry{
+	position:absolute;
+	left:320px;
+	top:30px;
+}
+#newEntry form div *{
+	float: left;
+}
+#entryTypes{
+	padding-top:20px !important;
+	color:green;
+}
+#entryField{
+	margin-top: 20px;
+}
+#submitEntry{
+	margin-top: 20px;
+}
