@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
 
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta http-equiv="x-ua-compatible" content="IE=9">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
 
 		<?php include "connect_open.php"; ?>
 	</head>

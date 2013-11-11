@@ -1,6 +1,6 @@
 function getCampaignHistory(id){
 
-	//console.log(id);
+	console.log(id);
 
 	// TODO: include passing a paramter to the php-file to get rid of hiding those not needed sections | also: should be faster in general
 	/*var result = $.get('queryCampaignHistory.php',function(data){ 
@@ -128,7 +128,7 @@ function createEntryTypeTemplate(entryType){
 
 		case 'campaignStart':
 			var returnString = 	'<div>'
-				+ 					'<span>Automatischer Eintrag in die DB (?)</span><br/><br/>'
+				+ 					'<span>Automatischer Eintrag in die DB vom AdServer (?)</span><br/><br/>'
             	+ 				'</div>';
 			$('#entryTypeTemplate').html(returnString);
 			break;
