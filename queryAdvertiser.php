@@ -7,7 +7,7 @@
 	    echo 'MySQL Error: ' . mysql_error();
 	    exit;
 	}
-	echo '<select name="game" style="width: 200px" onchange ="getCampaigns($(this)[0].value)">';
+	echo '<select id="advertiserList" name="game" style="width: 200px" onchange ="getCampaigns($(this)[0].value)">';
 	while($row = mysql_fetch_assoc($result)){
         echo '<option data-advertiser="'.$row['advertiser'].'" id="">'.$row['advertiser'].'</option>';
     }

@@ -119,6 +119,7 @@ body{
 	filter:alpha(opacity=30); /* For IE8 and earlier */
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
+	text-align: center;
 }
 #newEntry{
 	position:absolute;

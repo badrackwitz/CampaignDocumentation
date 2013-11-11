@@ -13,26 +13,33 @@
 		<div id="leftColumn">
 			<section id="advertiser">
 				<div id="">
-					Choose an advertiser
+					Choose an advertiser 
 				</div>
 					<?php include "queryAdvertiser.php"; ?>
+					<script type="text/javascript">
+						getCampaigns($('#advertiserList').find(":selected").val());
+					</script>
 				
 			</section>	
 			<section id="campaignNames">
 				<div id="">
-					Choose a campaign
+					Choose a campaign <i id="loadingCampaigns" class="fa fa-spinner fa-spin"></i>
 				</div>
 				<div id="campaignNameList">
 					<?php include "queryCampaignNames.php"; ?>
+					<script type="text/javascript">
+						getCampaignHistory($('#campaignNamesList').find(":selected").index()+2);
+					</script>
 				</div>
+				
 				
 			</section>	
 		</div>
 		<div id="rightColumn">
 			<div id="contentwrapper">
 				<section id="history">
-					<div id="">History of the campaign</div>
-					<div id="historyListing" onchange ="checkEntryType()"></div>
+					<div id="">History of the campaign <i id="loadingCampaignHistory" class="fa fa-spinner fa-spin"></i></div>
+					<div id="historyListing"></div>
 				</section>
 				<section id="newEntry">
 					<label for="entryField">Make a new entry</label>
@@ -50,8 +57,8 @@
 								<!--<li title="Absprache" data-entryType="agreement"><i class="fa fa-refresh"></i></li>-->
 								<li title="Validiert" data-entryType="validated" style="color:#4ba3cc" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-thumbs-o-up"></i></li>
 								<li title="Validiert" data-entryType="validated" style="color:#03a678" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-check"></i></li>
-								<li title="Kampagnenstart" data-entryType="start" style="color:#ffaa00" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-sign-out"></i></li>
-								<li title="Kampagnenstart" data-entryType="start" style="color:#ffaa00" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-sign-in"></i></li>
+								<li title="Kampagnenstart" data-entryType="campaignStart" style="color:#ffaa00" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-sign-out"></i></li>
+								<li title="Kampagnenende" data-entryType="campaignEnd" style="color:#ffaa00" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-sign-in"></i></li>
 								<li title="Reporting" data-entryType="reporting" style="color:#d91a2a" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-bar-chart-o"></i></li>
 
 							</ul>

@@ -1,4 +1,10 @@
 <?php 
+	if(isset($_POST['id'])){
+			$chosenID = $_POST['id']; 
+		} else{
+
+			$chosenID = "";
+		}
 
 	$link = mysql_connect('localhost','campdoc_user','campdoc');
 	mysql_select_db('campdoc', $link);
@@ -14,6 +20,7 @@
 	$queryString .= "LEFT OUTER JOIN T_DOCUMENTATION_HISTORY tDH ON tC.documentationID = tDH.ID ";
 	$queryString .= "LEFT OUTER JOIN T_HISTORY_STREAM tHS ON tDH.historyID = tHS.ID ";
 	$queryString .= "LEFT OUTER JOIN T_ENTRYTYPES tET ON tHS.typeOfEntry = tET.ID ";
+	$queryString .= "Where  tHS.historyID ='".$chosenID."'";
 	
 	$sql    = $queryString; 
 
@@ -29,7 +36,7 @@
 	while($row = mysql_fetch_assoc($result)){
         $returnString .= '<section class="historyEntry" data-type="'.$row['typeOfEntry'].'" id="'.$row['historyID'].'">'.$row['historyEntry'].'<div id="entryType"><i class="bigIcon fa fa-'.$row['icon'].'" style="color:'.$row['color'].' !important;"></i></div></section>';
     }
-
+    
     echo $returnString;
     
 	include "connect_close.php";

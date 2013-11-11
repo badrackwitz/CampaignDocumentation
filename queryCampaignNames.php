@@ -28,7 +28,7 @@
 	    echo 'MySQL Error: ' . mysql_error();
 	    exit;
 	}
-	echo '<select name="game" style="width: 200px" onchange ="getCampaignHistory(this.selectedIndex + 1)"><!--<option disabled="disabled">Campaigns</option>-->';
+	echo '<select id="campaignNamesList" name="game" style="width: 200px" onchange ="getCampaignHistory(this.selectedIndex + 1)"><!--<option disabled="disabled">Campaigns</option>-->';
 	while($row = mysql_fetch_assoc($result)){
 		//$documentationID = $row['documentationID'];
         //echo '<option id="'.$documentationID.'">'.$row['campaignName'].'</option>';
