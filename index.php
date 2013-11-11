@@ -1,9 +1,9 @@
 <html>
 	<head>
 		<title>CampaignDoc</title>
-		<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="util.js"></script>
-		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
 		<?php include "connect_open.php"; ?>
