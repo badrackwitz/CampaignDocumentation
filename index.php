@@ -70,6 +70,25 @@
 					   <div id="entryTypeTemplate"></div>
 					</form> 
 				</section>
+				<section id="legend">
+					<div id="">Legend</div>
+					<ul style="line-height:25pt;margin-top:22px;font-size:11pt;">
+								<li><i class="fa fa-phone" style="color:#03a678"></i> Call</li>
+								<li><i class="fa fa-envelope-o" style="color:#4ba3cc"></i> Mail</li>
+								<li><i class="fa fa-upload" style="color:#596c73"></i> Ad Material Upload</li>
+								<li><i class="fa fa-film" style="color:#8c5e49"></i> Ad Material Upload</li>
+								<!--<li title="Werbemittel" data-entryType="adMaterial"><i class="fa fa-picture-o"></i></li>-->
+								<li><i class="fa fa-exchange" style="color:#be946a"></i> Agreement</li>
+								<!--<li title="Absprache" data-entryType="agreement"><i class="fa fa-retweet"></i></li>-->
+								<!--<li title="Absprache" data-entryType="agreement"><i class="fa fa-refresh"></i></li>-->
+								<li><i class="fa fa-thumbs-o-up" style="color:#4ba3cc"></i> Validated</li>
+								<li><i class="fa fa-check" style="color:#03a678"></i> Validated</li>
+								<li><i class="fa fa-sign-out" style="color:#ffaa00"></i> Campaign Start</li>
+								<li><i class="fa fa-sign-in" style="color:#ffaa00"></i> Campaign End</li>
+								<li><i class="fa fa-bar-chart-o" style="color:#d91a2a"></i> Reporting</li>
+
+							</ul>
+				</section>
 			</div>
 		</div>
 	</body>

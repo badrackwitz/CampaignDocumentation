@@ -110,7 +110,7 @@ body{
 	padding-top:10px;
 	font-size: 11pt;
 	position: relative;
-	box-shadow: 10px 10px 10px #bbb;
+	box-shadow: 5px 5px 10px #bbb;
 
 }
 #historyListing section:last-child{
@@ -132,9 +132,24 @@ body{
 	border-bottom-left-radius: 10px;
 	text-align: center;
 }
+#attachedFile{
+	position:absolute;
+	bottom:-7px;
+	left:231px;
+	width:30px;
+	height:30px;
+	/*background-color: #FFAA00;*/
+	/*
+		opacity: 0.3;
+		filter:alpha(opacity=30); /* For IE8 and earlier */
+	*/
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	text-align: center;
+}
 #newEntry{
 	position:absolute;
-	left:320px;
+	left:330px;
 	top:30px;
 	width:400px;
 }
@@ -210,4 +225,18 @@ span#noMarginTop{
 	vertical-align: middle;
 	padding-right:7px;
 	padding-top:5px;
+}
+#paperclip{
+	font-size: 17pt;
+	text-align: center;
+	vertical-align: middle;
+	padding-right:7px;
+	padding-top:5px;
+}
+#legend{
+	position: fixed;
+	top:30px;
+	right:00px;
+	height:200px;
+	width:200px;
 }

@@ -1,6 +1,6 @@
 function getCampaignHistory(id){
 
-	console.log(id);
+	//console.log(id);
 
 	// TODO: include passing a paramter to the php-file to get rid of hiding those not needed sections | also: should be faster in general
 	/*var result = $.get('queryCampaignHistory.php',function(data){ 
@@ -15,7 +15,7 @@ function getCampaignHistory(id){
             type: "POST",
             data: ({id: id}), // pass the advertiser to get campaigns from this advertiser
             beforeSend: function(){
-            	console.log('getting the campaigns');
+            	//console.log('getting the campaigns');
             	$('#loadingCampaignHistory').show();
             	$('#historyListing section').css({'opacity':'0.5','filter':'alpha(opacity=50)'});
             },
@@ -40,7 +40,7 @@ function getCampaigns(advertiser){
             type: "POST",
             data: ({advertiser: advertiser}), // pass the advertiser to get campaigns from this advertiser
             beforeSend: function(){
-            	console.log('getting the campaigns');
+            	//console.log('getting the campaigns');
             	$('#loadingCampaigns').show();
             },
             success: function(data){
@@ -53,6 +53,16 @@ function getCampaigns(advertiser){
 
 function createEntryTypeTemplate(entryType){
 	//console.log(entryType);
+	//console.log(event.target.parentNode);
+	//console.log($('li').attr('data-entryType'));
+	// highlight selected entryType
+	$('#entryTypes ul li').css({'opacity':'0.5'});
+	if($(event.target).parent().attr('data-entryType') == entryType){
+		$('li[data-entryType="'+entryType+'"]').css({'opacity':'1'});
+	}else{
+		$('li').css({'opacity':'0.5'});
+	}
+
 	switch (entryType){
 		case 'call':
 				var returnString = 	'<div>'
