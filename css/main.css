@@ -92,9 +92,9 @@ body{
 }
 #historyListing{
 	margin-top:10px;
-	width:290px;
+	width:295px;
 	overflow-y: scroll;
-	height: 600px;
+	height: 80%;
 }
 #historyListing section{
 	margin-top:20px;
@@ -110,6 +110,12 @@ body{
 	padding-top:10px;
 	font-size: 11pt;
 	position: relative;
+	box-shadow: 10px 10px 10px #bbb;
+
+}
+#historyListing section:last-child{
+	margin-bottom:15px;
+
 }
 #entryType{
 	position:absolute;
