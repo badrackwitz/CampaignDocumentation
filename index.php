@@ -41,11 +41,19 @@
 		//echo 'next historyID: '.$nextHistoryID;
 
 		$entryTypeValue = 0;
+		$historyEntry = '';
+
+		$teamMemberSplit = preg_split('/(?=[A-Z])/',$teamMember);
+		print_r($teamMemberSplit);
 
 		// match the entry type words to corresponding values
 		switch($entryType){
 			case 'call':
 				$entryTypeValue = 1;
+
+				// possible structure for a call history entry
+				$historyEntry = '<p>'.ucwords($entryType).'</p><br/><div>'.ucwords($teamMemberSplit[0]).' '.$teamMemberSplit[1].' with '.$callPartner.'<br/><br/>'.$entryField.'</div>'; 
+				
 				break;
 			case 'email':
 				$entryTypeValue = 2;
@@ -61,11 +69,14 @@
 				break;
 			default:
 				$entryTypeValue = 0;
+				$historyEntry = '<p>'.$entryType.'</p><br/><div>'.$entryField.'</div>';
 				break;
 		}
 
+
+
 		// INSERT INTO T_HISTORY_STREAM (historyID= $nextHistoryID)
-		$sql = "INSERT INTO T_HISTORY_STREAM (historyID, historyEntry, typeOfEntry) VALUES ('$nextHistoryID','$_POST[entryField]','$entryTypeValue')";
+		$sql = "INSERT INTO T_HISTORY_STREAM (historyID, historyEntry, typeOfEntry) VALUES ('$nextHistoryID','$historyEntry','$entryTypeValue')";
 		$result = mysql_query($sql);
 		if (!$result) {
 		    echo "DB Fehler, konnte die Datenbank nicht abfragen\n";
