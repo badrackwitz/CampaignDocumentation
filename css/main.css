@@ -47,7 +47,6 @@ table {
 /** ------------------------------ **/
 /**  main CSS **/
 *{
-	
 	margin:0;
 	padding:0;
 }
@@ -58,7 +57,6 @@ body{
 	background-color: #EFEFEF;
 	font-family: 'Lucida Sans Unicode', 'Trebuchet MS', Arial, sans-serif;
 	font-size: 13pt;
-
 }
 #leftColoumn{
 	width:20%;
@@ -111,7 +109,6 @@ body{
 	font-size: 11pt;
 	position: relative;
 	box-shadow: 5px 5px 10px #bbb;
-
 }
 #historyListing section:last-child{
 	margin-bottom:15px;
@@ -138,14 +135,13 @@ body{
 	left:231px;
 	width:30px;
 	height:30px;
-	/*background-color: #FFAA00;*/
-	/*
-		opacity: 0.3;
-		filter:alpha(opacity=30); /* For IE8 and earlier */
-	*/
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	text-align: center;
+	font-size: 13pt;
+}
+#attachedFile:hover{
+	cursor: pointer;
 }
 #newEntry{
 	position:absolute;
@@ -167,7 +163,6 @@ body{
 	width:250px;
 	padding-bottom: 10px;
 	border-bottom: thin solid #bbb;
-
 }
 #entryTypes ul li{
 	font-size: 30pt;
@@ -198,13 +193,11 @@ label{
 }
 #entryTypeTemplate div, #entryTypeTemplate div span, #entryTypeTemplate div span input{
 	margin-top:10px;
-
 }
 #entryTypeTemplate div{
 	padding-bottom: 10px;
 	border-bottom: thin solid #bbb;
 	width:300px;
-
 }
 #entryTypeTemplate div span{
 	margin-top: 20px;
@@ -236,7 +229,7 @@ span#noMarginTop{
 #legend{
 	position: fixed;
 	top:30px;
-	right:00px;
+	right:0px;
 	height:200px;
 	width:200px;
 }

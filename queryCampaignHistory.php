@@ -17,10 +17,10 @@
 
 	$queryString = "SELECT tHS.typeOfEntry, tHS.historyEntry, tDH.historyID, tET.color, tET.icon ";
 	$queryString .= "FROM T_CAMPAIGN tC ";
-	$queryString .= "LEFT OUTER JOIN T_DOCUMENTATION_HISTORY tDH ON tC.documentationID = tDH.ID ";
-	$queryString .= "LEFT OUTER JOIN T_HISTORY_STREAM tHS ON tDH.historyID = tHS.ID ";
+	$queryString .= "LEFT OUTER JOIN T_DOCUMENTATION_HISTORY tDH ON tC.documentationID = tDH.campaignID ";
+	$queryString .= "LEFT OUTER JOIN T_HISTORY_STREAM tHS ON tDH.historyID = tHS.historyID ";
 	$queryString .= "LEFT OUTER JOIN T_ENTRYTYPES tET ON tHS.typeOfEntry = tET.ID ";
-	$queryString .= "Where  tDH.campaignID ='".$chosenID."'";
+	$queryString .= "Where tDH.campaignID ='".$chosenID."'";
 	
 	$sql    = $queryString; 
 

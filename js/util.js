@@ -1,6 +1,6 @@
 function getCampaignHistory(id){
 
-	//console.log(id);
+	console.log(id);
 
 	// TODO: include passing a paramter to the php-file to get rid of hiding those not needed sections | also: should be faster in general
 	/*var result = $.get('queryCampaignHistory.php',function(data){ 
@@ -52,7 +52,7 @@ function getCampaigns(advertiser){
 }
 
 function createEntryTypeTemplate(entryType){
-	//console.log(entryType);
+	console.log(entryType);
 	//console.log(event.target.parentNode);
 	//console.log($('li').attr('data-entryType'));
 	// highlight selected entryType
@@ -66,14 +66,17 @@ function createEntryTypeTemplate(entryType){
 	switch (entryType){
 		case 'call':
 				var returnString = 	'<div>'
-					+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="AdOps-Teammitglied" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
-					+ 					'<span>Gespr&auml;chspartner: <input name="Gesprächspartner" type="text" size="15" maxlength="15"/></span><br/><br/>'
+					+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="adOpsMember" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
+					+ 					'<span>Gespr&auml;chspartner: <input name="callPartner" type="text" size="15" maxlength="15" value="Mr. X"/></span><br/><br/>'
 					+ 					'<label for="entryField">Ergebnis:</label><br/><br/>'
-					+ 					'<textarea id="entryField" cols="30" rows="4"></textarea><br/><br/>'
+					+ 					'<textarea id="entryField" name="entryField" cols="30" rows="4">booking</textarea><br/><br/>'
 					+ 					'<label for="file-upload">Datei:</label><br/><br/><br/>'
                 	+ 					'<input type="file" id="file-upload" name="file-upload" /><br/><br/>'
+                	+ 					'<input type="hidden" id="hiddenEntryType" name="entryType" value="'+entryType+'"/><br/><br/>'
+                	+ 					'<input type="hidden" id="hiddenCampaignIndex" name="campaignID" value="'+($('#campaignNamesList').find(":selected").index()+1)+'"/><br/><br/>'
+                	+ 					'<input type="hidden" id="hiddenCampaignName" name="campaignName" value="'+($('#campaignNamesList').find(":selected").val())+'"/><br/><br/>'
                 	+ 				'</div>'
-			    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" value="Senden" /></div>';
+			    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" name ="submitForm" value="Senden" /></div>';
 					
 
 				$('#entryTypeTemplate').html(returnString);
@@ -82,12 +85,17 @@ function createEntryTypeTemplate(entryType){
 
 		case 'email':
 			var returnString = 	'<div>'
-				+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="AdOps-Teammitglied" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
-				+ 					'<span>Gespr&auml;chspartner: <input name="Gesprächspartner" type="text" size="15" maxlength="15"/></span><br/><br/>'
+				+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="adOpsMember" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
+				+ 					'<span>Gespr&auml;chspartner: <input name="callPartner" type="text" size="15" maxlength="15"/></span><br/><br/>'
+				+					'<label for="entryField">Ergebnis:</label><br/><br/>'
+				+ 					'<textarea id="entryField" name="entryField" cols="30" rows="4">booking</textarea><br/><br/>'
 				+ 					'<label for="file-upload">E-Mail (inkl. Verlauf):</label><br/><br/><br/>'
             	+ 					'<input type="file" id="file-upload" name="file-upload" /><br/><br/>'
+				+					'<input type="hidden" id="hiddenEntryType" name="entryType" value="'+entryType+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignIndex" name="campaignID" value="'+($('#campaignNamesList').find(":selected").index()+1)+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignName" name="campaignName" value="'+($('#campaignNamesList').find(":selected").val())+'"/><br/><br/>'
             	+ 				'</div>'
-		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" value="Senden" /></div>';
+		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" name ="submitForm" value="Senden" /></div>';
 				
 
 			$('#entryTypeTemplate').html(returnString);
@@ -99,8 +107,11 @@ function createEntryTypeTemplate(entryType){
 				+ 					'<span>Von: <span id="noMarginTop"><input name="From" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
 				+ 					'<label for="file-upload">Werbemittel:</label><br/><br/><br/>'
             	+ 					'<input type="file" id="file-upload" name="file-upload" /><br/><br/>'
+				+					'<input type="hidden" id="hiddenEntryType" name="entryType" value="'+entryType+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignIndex" name="campaignID" value="'+($('#campaignNamesList').find(":selected").index()+1)+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignName" name="campaignName" value="'+($('#campaignNamesList').find(":selected").val())+'"/><br/><br/>'
             	+ 				'</div>'
-		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" value="Senden" /></div>';
+		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" name ="submitForm" value="Senden" /></div>';
 				
 
 			$('#entryTypeTemplate').html(returnString);
@@ -109,12 +120,15 @@ function createEntryTypeTemplate(entryType){
 
 		case 'agreement':
 			var returnString = 	'<div>'
-				+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="AdOps-Teammitglied" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
-				+ 					'<span>Gespr&auml;chspartner: <input name="Gesprächspartner" type="text" size="15" maxlength="15"/></span><br/><br/>'
+				+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="adOpsMember" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
+				+ 					'<span>Gespr&auml;chspartner: <input name="callPartner" type="text" size="15" maxlength="15"/></span><br/><br/>'
             	+ 					'<label for="entryField">Ergebnis:</label><br/><br/>'
-				+ 					'<textarea id="entryField" cols="30" rows="4"></textarea><br/><br/>'
+				+ 					'<textarea id="entryField" name="entryField" cols="30" rows="4"></textarea><br/><br/>'
+				+					'<input type="hidden" id="hiddenEntryType" name="entryType" value="'+entryType+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignIndex" name="campaignID" value="'+($('#campaignNamesList').find(":selected").index()+1)+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignName" name="campaignName" value="'+($('#campaignNamesList').find(":selected").val())+'"/><br/><br/>'
             	+ 				'</div>'
-		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" value="Senden" /></div>';
+		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" name ="submitForm" value="Senden" /></div>';
 				
 
 			$('#entryTypeTemplate').html(returnString);
@@ -123,13 +137,16 @@ function createEntryTypeTemplate(entryType){
 
 		case 'validated':
 			var returnString = 	'<div>'
-				+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="AdOps-Teammitglied" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
+				+ 					'<span>AdOps-Teammitglied: <span id="listTeammember"><input name="adOpsMember" type="text" size="15" maxlength="15"/></span></span><br/><br/>'
 				+ 					'<label for="dateValidatedOn">Validiert am:</label><br/><br/><br/>'
             	+ 					'<input type="date" id="dateValidatedOn" name="startValidated" value="<?php echo date(); ?>"/><br/><br/>'
             	+					'<label for="datePlannedStart">Kampagnenstart am:</label><br/><br/><br/>'
             	+ 					'<input type="date" id="datePlannedStart" name="startDate" /><br/><br/>'
+            	+					'<input type="hidden" id="hiddenEntryType" name="entryType" value="'+entryType+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignIndex" name="campaignID" value="'+($('#campaignNamesList').find(":selected").index()+1)+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignName" name="campaignName" value="'+($('#campaignNamesList').find(":selected").val())+'"/><br/><br/>'
             	+ 				'</div>'
-		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" value="Senden" /></div>';
+		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" name ="submitForm" value="Senden" /></div>';
 				
 
 			$('#entryTypeTemplate').html(returnString);
@@ -139,6 +156,9 @@ function createEntryTypeTemplate(entryType){
 		case 'campaignStart':
 			var returnString = 	'<div>'
 				+ 					'<span>Automatischer Eintrag in die DB vom AdServer (?)</span><br/><br/>'
+				+					'<input type="hidden" id="hiddenEntryType" name="entryType" value="'+entryType+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignIndex" name="campaignID" value="'+($('#campaignNamesList').find(":selected").index()+1)+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignName" name="campaignName" value="'+($('#campaignNamesList').find(":selected").val())+'"/><br/><br/>'
             	+ 				'</div>';
 			$('#entryTypeTemplate').html(returnString);
 			break;
@@ -146,6 +166,9 @@ function createEntryTypeTemplate(entryType){
 		case 'campaignEnd':
 			var returnString = 	'<div>'
 				+ 					'<span>Automatischer Eintrag in die DB vom AdServer (?)</span><br/><br/>'
+				+					'<input type="hidden" id="hiddenEntryType" name="entryType" value="'+entryType+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignIndex" name="campaignID" value="'+($('#campaignNamesList').find(":selected").index()+1)+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignName" name="campaignName" value="'+($('#campaignNamesList').find(":selected").val())+'"/><br/><br/>'
             	+ 				'</div>';
         	$('#entryTypeTemplate').html(returnString);
 			break;
@@ -156,8 +179,11 @@ function createEntryTypeTemplate(entryType){
 				+ 					'<span>An: <span id="noMarginTop"><input name="To" type="text" size="15" maxlength="15"/></span></span><br/>'
 				+ 					'<label for="file-upload-reporting">Reporting:</label><br/><br/><br/>'
             	+ 					'<input type="file" id="file-upload" name="file-upload-reporting" /><br/><br/>'
+            	+					'<input type="hidden" id="hiddenEntryType" name="entryType" value="'+entryType+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignIndex" name="campaignID" value="'+($('#campaignNamesList').find(":selected").index()+1)+'"/><br/><br/>'
+            	+ 					'<input type="hidden" id="hiddenCampaignName" name="campaignName" value="'+($('#campaignNamesList').find(":selected").val())+'"/><br/><br/>'
             	+ 				'</div>'
-		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" value="Senden" /></div>';
+		    	+				'<div style="width:100%;border:0px;"><input id="submitEntry" type="submit" name ="submitForm" value="Senden" /></div>';
         	$('#entryTypeTemplate').html(returnString);
         	fillTeammemberDD();
 			break;
@@ -169,7 +195,7 @@ function createEntryTypeTemplate(entryType){
 }
 
 function fillTeammemberDD() {
-	var ddContent = '<select id="teamMember">'
+	var ddContent = '<select id="teamMember" name="teamMember">'
 					+ 	'<option value="leonidKushner">Leonid Kushner</option>'
 					+ 	'<option value="oleMehles">Ole Mehles</option>'
 					+ 	'<option value="juliaNiendorf">Julia Niendorf</option>'
