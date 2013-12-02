@@ -53,7 +53,7 @@
 
 				// possible structure for a call history entry
 				$historyEntry = '<p>'.ucwords($entryType).'</p><br/><div>'.ucwords($teamMemberSplit[0]).' '.$teamMemberSplit[1].' with '.$callPartner.'<br/><br/>'.$entryField.'</div>'; 
-				
+
 				break;
 			case 'email':
 				$entryTypeValue = 2;
@@ -143,9 +143,22 @@
 						getCampaignHistory($('#campaignNamesList').find(":selected").index()+2);
 					</script>
 				</div>
-				
-				
 			</section>	
+			<section id="entryTypes">
+				Make a new entry
+					<ul>
+						<li style="color:#03a678" ><i class="fa fa-phone"></i></li>
+						<li style="color:#4ba3cc" ><i class="fa fa-envelope-o"></i></li>
+						<li style="color:#596c73" ><i class="fa fa-upload"></i></li>
+						<li style="color:#8c5e49" ><i class="fa fa-film"></i></li>
+						<li style="color:#be946a" ><i class="fa fa-exchange"></i></li>
+						<li style="color:#4ba3cc" ><i class="fa fa-thumbs-o-up"></i></li>
+						<li style="color:#03a678" ><i class="fa fa-check"></i></li>
+						<li style="color:#ffaa00" ><i class="fa fa-sign-out"></i></li>
+						<li style="color:#ffaa00" ><i class="fa fa-sign-in"></i></li>
+						<li style="color:#d91a2a" ><i class="fa fa-bar-chart-o"></i></li>
+					</ul>
+			</section>
 		</div>
 		<div id="rightColumn">
 			<div id="contentwrapper">
@@ -153,33 +166,7 @@
 					<div id="">History of the campaign <i id="loadingCampaignHistory" class="fa fa-spinner fa-spin"></i></div>
 					<div id="historyListing"></div>
 				</section>
-				<section id="newEntry">
-					<label for="entryField">Make a new entry</label>
-
-					<form action="index.php" method="post"> 
-						<div id="entryTypes">
-							<ul>
-								<li title="Anruf" data-entryType="call" name="call" style="color:#03a678" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-phone"></i></li>
-								<li title="E-Mail" data-entryType="email" name="email" style="color:#4ba3cc" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-envelope-o"></i></li>
-								<li title="Werbemittel" data-entryType="adMaterial" name="adMaterial" style="color:#596c73" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-upload"></i></li>
-								<li title="Werbemittel" data-entryType="adMaterial" name="adMaterial" style="color:#8c5e49" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-film"></i></li>
-								<!--<li title="Werbemittel" data-entryType="adMaterial"><i class="fa fa-picture-o"></i></li>-->
-								<li title="Absprache" data-entryType="agreement" name="agreement" style="color:#be946a" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-exchange"></i></li>
-								<!--<li title="Absprache" data-entryType="agreement"><i class="fa fa-retweet"></i></li>-->
-								<!--<li title="Absprache" data-entryType="agreement"><i class="fa fa-refresh"></i></li>-->
-								<li title="Validiert" data-entryType="validated" name="validated" style="color:#4ba3cc" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-thumbs-o-up"></i></li>
-								<li title="Validiert" data-entryType="validated" name="validated" style="color:#03a678" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-check"></i></li>
-								<li title="Kampagnenstart" data-entryType="campaignStart" name="campaignStart" style="color:#ffaa00" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-sign-out"></i></li>
-								<li title="Kampagnenende" data-entryType="campaignEnd" name="campaignEnd" style="color:#ffaa00" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-sign-in"></i></li>
-								<li title="Reporting" data-entryType="reporting" name="reporting" style="color:#d91a2a" onclick="createEntryTypeTemplate($(this).attr('data-entryType'))"><i class="fa fa-bar-chart-o"></i></li>
-							</ul>
-						</div>
-					   <div id="entryTypeTemplate"></div>
-					</form> 
-					<section style="width:200px;font-size:11pt;">
-						<?php //print_r($entryInformation)?>
-					</section>
-				</section>
+				
 				<section id="legend">
 					<div id="">Legend</div>
 					<ul style="line-height:25pt;margin-top:22px;font-size:11pt;">

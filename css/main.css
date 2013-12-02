@@ -65,8 +65,8 @@ body{
 	left:0px;
 	top:0px;
 }
-#campaignNames, #advertiser{
-	margin-left:15px;
+#campaignNames, #advertiser, #entryTypes{
+	margin-left:15px !important;
 	margin-top:30px;
 }
 #campaignNames select, #advertiser select{
@@ -90,13 +90,13 @@ body{
 }
 #historyListing{
 	margin-top:10px;
-	width:295px;
+	width:500px;
 	overflow-y: auto;
 	height: 80%;
 }
 #historyListing section{
 	margin-top:20px;
-	width:250px;
+	width:450px;
 	height:200px;
 	background-color: #FEFEFE;
 	border: thin solid #bbb;
@@ -117,7 +117,7 @@ body{
 #entryType{
 	position:absolute;
 	top:0px;
-	left:231px;
+	left:421px;
 	width:30px;
 	height:30px;
 	/*background-color: #FFAA00;*/
@@ -132,7 +132,7 @@ body{
 #attachedFile{
 	position:absolute;
 	bottom:-7px;
-	left:231px;
+	left:421px;
 	width:30px;
 	height:30px;
 	border-top-right-radius: 10px;
@@ -154,6 +154,7 @@ body{
 }
 #entryTypes{
 	margin-top:20px !important;
+	margin-left: 20px;
 	color:#CDCDCD;
 	width: 250px;
 }
@@ -163,11 +164,12 @@ body{
 	width:250px;
 	padding-bottom: 10px;
 	border-bottom: thin solid #bbb;
+	margin-left: 20px;
 }
 #entryTypes ul li{
-	font-size: 30pt;
-	padding-right: 10px;
-	padding-top: 10px;
+	font-size: 20pt;
+	margin-top: 10px;
+	margin-left: 20px;
 	opacity: 0.5;
 	filter:alpha(opacity=50); /* For IE8 and earlier */
 }
