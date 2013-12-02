@@ -155,7 +155,7 @@ body{
 #entryTypes{
 	margin-top:20px !important;
 	margin-left: 20px;
-	color:#CDCDCD;
+	/*color:#CDCDCD;*/
 	width: 250px;
 }
 #entryTypes ul{
@@ -170,8 +170,8 @@ body{
 	font-size: 20pt;
 	margin-top: 10px;
 	margin-left: 20px;
-	opacity: 0.5;
-	filter:alpha(opacity=50); /* For IE8 and earlier */
+	/*opacity: 0.5;
+	filter:alpha(opacity=50); *//* For IE8 and earlier */
 }
 #entryTypes ul li:hover{
 	color:#AAAAAA;

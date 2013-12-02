@@ -93,6 +93,7 @@
 		    exit;
 		}
 
+		
 		header('Location:index.php');
 		die();
 
@@ -112,7 +113,11 @@
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/util.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
 
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -125,7 +130,7 @@
 		<div id="leftColumn">
 			<section id="advertiser">
 				<div id="">
-					Choose an advertiser 
+					<strong>Choose an advertiser </strong>
 				</div>
 					<?php include "queryAdvertiser.php"; ?>
 					<script type="text/javascript">
@@ -135,7 +140,7 @@
 			</section>	
 			<section id="campaignNames">
 				<div id="">
-					Choose a campaign <i id="loadingCampaigns" class="fa fa-spinner fa-spin"></i>
+					<strong>Choose a campaign </strong><i id="loadingCampaigns" class="fa fa-spinner fa-spin"></i>
 				</div>
 				<div id="campaignNameList">
 					<?php include "queryCampaignNames.php"; ?>
@@ -145,30 +150,33 @@
 				</div>
 			</section>	
 			<section id="entryTypes">
-				Make a new entry
+				<div id=""><strong>Make a new entry</strong> (Drag & Drop)</div>
 					<ul>
-						<li style="color:#03a678" ><i class="fa fa-phone"></i></li>
-						<li style="color:#4ba3cc" ><i class="fa fa-envelope-o"></i></li>
-						<li style="color:#596c73" ><i class="fa fa-upload"></i></li>
-						<li style="color:#8c5e49" ><i class="fa fa-film"></i></li>
-						<li style="color:#be946a" ><i class="fa fa-exchange"></i></li>
-						<li style="color:#4ba3cc" ><i class="fa fa-thumbs-o-up"></i></li>
-						<li style="color:#03a678" ><i class="fa fa-check"></i></li>
-						<li style="color:#ffaa00" ><i class="fa fa-sign-out"></i></li>
-						<li style="color:#ffaa00" ><i class="fa fa-sign-in"></i></li>
-						<li style="color:#d91a2a" ><i class="fa fa-bar-chart-o"></i></li>
+						<li style="color:#03a678" class="draggable" data-entryType="call"><i class="fa fa-phone"></i></li>
+						<li style="color:#4ba3cc" class="draggable" data-entryType="email"><i class="fa fa-envelope-o"></i></li>
+						<li style="color:#596c73" class="draggable" data-entryType="adMaterial"><i class="fa fa-upload"></i></li>
+						<li style="color:#8c5e49" class="draggable" data-entryType="adMaterial"><i class="fa fa-film"></i></li>
+						<li style="color:#be946a" class="draggable" data-entryType="agreement"><i class="fa fa-exchange"></i></li>
+						<li style="color:#4ba3cc" class="draggable" data-entryType="validated"><i class="fa fa-thumbs-o-up"></i></li>
+						<li style="color:#03a678" class="draggable" data-entryType="validated"><i class="fa fa-check"></i></li>
+						<li style="color:#ffaa00" class="draggable" data-entryType="campaignStart"><i class="fa fa-sign-out"></i></li>
+						<li style="color:#ffaa00" class="draggable" data-entryType="campaignEnd"><i class="fa fa-sign-in"></i></li>
+						<li style="color:#d91a2a" class="draggable" data-entryType="reporting"><i class="fa fa-bar-chart-o"></i></li>
 					</ul>
 			</section>
+
+			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
 		</div>
 		<div id="rightColumn">
 			<div id="contentwrapper">
 				<section id="history">
-					<div id="">History of the campaign <i id="loadingCampaignHistory" class="fa fa-spinner fa-spin"></i></div>
-					<div id="historyListing"></div>
+					<div id=""><strong>History of the campaign </strong><i id="loadingCampaignHistory" class="fa fa-spinner fa-spin"></i></div>
+					<div id="historyListing" class="droppable"></div>
 				</section>
 				
 				<section id="legend">
-					<div id="">Legend</div>
+					<div id=""><strong>Legend</strong></div>
 					<ul style="line-height:25pt;margin-top:22px;font-size:11pt;">
 						<li><i class="fa fa-phone" style="color:#03a678"></i> Call</li>
 						<li><i class="fa fa-envelope-o" style="color:#4ba3cc"></i> Mail</li>
